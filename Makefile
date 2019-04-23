@@ -1,7 +1,7 @@
 GCC = /usr/local/arm/gcc-7.2.0/bin/arm-epos-eabi-gcc-7.2.0
-CFLAGS = -c -mcpu=arm926ej-s -g
+CFLAGS = -c -mcpu=cortex-a9 -g
 AS = /usr/local/arm/gcc-7.2.0/arm-epos-eabi/bin/as 
-ASFLAGS = -mcpu=arm926ej-s -g 
+ASFLAGS = -mcpu=cortex-a9 -g 
 LD = /usr/local/arm/gcc-7.2.0/arm-epos-eabi/bin/ld -T 
 OBJCOPY = /usr/local/arm/gcc-7.2.0/arm-epos-eabi/bin/objcopy 
 
@@ -18,7 +18,7 @@ link:
 	${OBJCOPY} -O binary test.elf test.bin
 
 run:
-	qemu-system-arm -M versatilepb -m 128M -nographic -kernel test.bin
+	qemu-system-arm -M realview-pbx-a9 -m 128M -nographic -kernel test.bin
 
 clean:
 	rm *.o 

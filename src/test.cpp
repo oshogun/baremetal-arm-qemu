@@ -1,6 +1,6 @@
 extern "C"
 {
-    volatile unsigned int * const UART0DR = (unsigned int *)0x101f1000;
+    volatile unsigned int * const UART0DR = (unsigned int *)0x10009000;
     
     void print_uart0(const char *s) {
         while(*s != '\0') { /* Loop until end of string */
